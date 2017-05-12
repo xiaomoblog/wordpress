@@ -51,7 +51,7 @@
 
             <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
             <?php endwhile; ?>
-
+            <a href="https://xiaomo.info/about.html" target="_blank">关于我</a>
         </div>
         <?php if($this->options->searchPage): ?>
         <a href="<?php $this->options->searchPage(); ?>" class="navbar-search">
