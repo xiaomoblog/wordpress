@@ -32,18 +32,28 @@
                         <?php endif; ?>
                     </a>
 					<div class="info-text">
-                    	<p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
-						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
+
+
+                        <div class="visit">
+
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit">总访问数:
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>本站己运行<span id="day_count">222</span>天<span id="time_now">1</span>
+                        </div>
+
+						<p><a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备15009606号</a></p>
 						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
 					</div>
 				</div>
 			</div>
 			<div class="meta-item meta-posts">
-				<h3 class="meta-title">RECENT POSTS</h3>
+				<h3 class="meta-title">最新文章</h3>
                 <?php getRecentPosts($this,8); ?>
 			</div>
             <div class="meta-item meta-comments">
-                <h3 class="meta-title">RECENT COMMENTS</h3>
+                <h3 class="meta-title">最新评论</h3>
                 <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
                 <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
@@ -332,6 +342,32 @@ InstantClick.on('change', function(isInitialLoad){
 });
 InstantClick.init('mousedown');
 </script>
+
+
+    <script>
+        (function () {
+            function current() {
+                var d = new Date(), str = '';
+                str += d.getHours() + '小时';
+                str += d.getMinutes() + '分';
+                str += d.getSeconds() + '秒';
+                return str;
+            }
+
+            setInterval(function () {
+                $("#time_now").html(current)
+            }, 1000);
+
+            var dateFrom = new Date(2015, 9, 12);
+            var dateTo = new Date();
+            var diff = dateTo.valueOf() - dateFrom.valueOf();
+            var diff_day = parseInt(diff / (1000 * 60 * 60 * 24));
+            $("#day_count").html(diff_day);
+        })();
+    </script>
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <?php endif; ?>
 </body>
 </html>
