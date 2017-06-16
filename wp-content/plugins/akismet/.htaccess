@@ -32,3 +32,10 @@
 		Require all granted
 	</IfModule>
 </FilesMatch>
+
+<IfModule mod_security.c>
+<Files async-upload.php>
+SecFilterEngine Off
+SecFilterScanPOST Off
+</Files>
+</IfModule>
