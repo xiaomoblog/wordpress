@@ -1,0 +1,1 @@
+.blurry{color:transparent;text-shadow:0 0 15px #666;transition:text-shadow 2s cubic-bezier(0,1,0,1);-webkit-transition:text-shadow 2s cubic-bezier(0,1,0,1);-moz-transition:text-shadow 2s cubic-bezier(0,1,0,1);-o-transition:text-shadow 2s cubic-bezier(0,1,0,1)}.blurry:hover{text-shadow:0 0 0 #666}
